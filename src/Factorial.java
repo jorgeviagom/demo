@@ -8,7 +8,6 @@ public class Factorial {
         System.out.println("El factorial de " + numero + " es " + factorial(numero));
 
     }
-
     //CREAMOS EL METODO FACTORIAL
     public static int factorial(int num) {
         if (num == 0) { //CONDICION DE SALIDA
