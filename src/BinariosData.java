@@ -49,8 +49,6 @@ public class BinariosData {
 
     } catch (IOException e) {
         System.err.println("Error de escritura. " + e.getMessage());;
+        }
     }
-    }
-
-
 }
