@@ -1,19 +1,19 @@
-
-import java.io.*;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.nio.file.Files;
 import java.nio.file.Path;
 
-public class Binarios {
+public class BinariosFiles {
     public static void main(String[] args) {
-        //ESCRIBIRFICHEROBYTES
-
-        //RUTA
-        Path ruta = Path.of("fichBytes.dat");
+        Path ruta = Path.of("fichBytesFile.dat");
 
         int i;
 
 
-        try (FileOutputStream flujoSalida = new FileOutputStream(ruta.toFile());
-             FileInputStream flujoEntrada = new FileInputStream(ruta.toFile())) {
+        try (
+                OutputStream flujoSalida = Files.newOutputStream(ruta);
+                InputStream flujoEntrada = Files.newInputStream(ruta)) {
 
             //Escribimos los numeros del 1 al 100 como bytes FICHBytes
 
@@ -26,9 +26,7 @@ public class Binarios {
 
         } catch (IOException ioe) {
             System.out.println("Error de lectura " + ioe.getMessage());
-            ioe.printStackTrace();
-        } finally {
+
         }
     }
 }
-
