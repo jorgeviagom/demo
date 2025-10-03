@@ -1,5 +1,3 @@
-import com.sun.jdi.PathSearchingVirtualMachine;
-
 import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -16,6 +14,7 @@ public class BinariosData {
     private static void leerPersonas(Path ruta) {
         try(InputStream flujoLectura = Files.newInputStream(ruta);
             DataInputStream dis = new DataInputStream(flujoLectura)){
+
             while(true){
                 try{
                     String nombres = dis.readUTF();
@@ -48,7 +47,7 @@ public class BinariosData {
         System.out.println("Datos escritos correctamente en: " + ruta.toAbsolutePath());
 
     } catch (IOException e) {
-        System.err.println("Error de escritura. " + e.getMessage());;
+        System.err.println("Error de escritura. " + e.getMessage());
         }
     }
 }
