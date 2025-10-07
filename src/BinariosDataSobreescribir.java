@@ -10,11 +10,11 @@ public class BinariosDataSobreescribir {
 
     public static void main(String[] args) {
 
-        escribirPersonas(RUTA);
-        leerPersonas(RUTA);
+        escribirPersonas();
+        leerPersonas();
         añadirRegistro("Antonio",14);
         añadirRegistro("Maria Jesus", 13);
-        leerPersonas(RUTA);
+        leerPersonas();
 
 
         }
@@ -36,7 +36,7 @@ public class BinariosDataSobreescribir {
         }
     }
 
-    private static void leerPersonas(Path RUTA) {
+    private static void leerPersonas() {
             try(InputStream flujoLectura = Files.newInputStream(RUTA);
                 DataInputStream dis = new DataInputStream(flujoLectura)){
 
@@ -57,7 +57,7 @@ public class BinariosDataSobreescribir {
 
         }
 
-        private static void escribirPersonas(Path RUTA) {
+        private static void escribirPersonas() {
             //Creamos una tabla de String "nombres" y  int "edades" con valores dentro
             String[] nombres = {"Oscar", "Jorge", "Miguel", "Dani", "Patri"};
             int [] edades = {26, 32, 34, 33,31};
