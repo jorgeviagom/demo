@@ -3,6 +3,7 @@ package Objetos;
 import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.StandardOpenOption;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,7 +15,25 @@ public class BinarioObjectStream_v2 {
 
         escribirPersonas();
         leerPersonas();
+        anadirRegistro(new BinariosPersona("Miriam", 32));
+        anadirRegistro(new BinariosPersona("Julian", 72));
+        System.out.println("\nEstamos despues de añadir 2 personas");
+        leerPersonas();
+    }
 
+    private static void anadirRegistro(BinariosPersona persona) {
+        boolean existe = Files.exists(RUTA);
+
+        try (OutputStream os = Files.newOutputStream(
+                RUTA,
+                StandardOpenOption.APPEND);
+                ObjectOutputStream oos = new ObjectOutputStream(os)) {
+            oos.writeObject(persona);
+            System.out.println(" + añadida persona: " + persona);
+        } catch (IOException ioe){
+            System.err.println("Error al añadir registro. " + ioe.getMessage());
+
+        }
     }
 
     private static void leerPersonas() {
@@ -33,7 +52,7 @@ public class BinarioObjectStream_v2 {
                 }
             }
         } catch (IOException e) {
-            System.out.println("Error al leer objetos. " + e.getMessage());;
+            System.err.println("Error al leer objetos. " + e.getMessage());;
         }
     }
     private static void escribirPersonas() {
