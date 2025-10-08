@@ -28,7 +28,7 @@ public class BinarioObjectStream_v2 {
                 StandardOpenOption.APPEND);
                 ObjectOutputStream oos = existe
                         ? new ObjetcOutputStreamSinCabecera(os)
-                        : new ObjectOutputStream(os)) {
+                            : new ObjectOutputStream(os)) {
             oos.writeObject(persona);
             System.out.println(" + añadida persona: " + persona);
         } catch (IOException ioe){
