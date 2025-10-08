@@ -1,4 +1,4 @@
-package DataStreams;
+package Objetos;
 
 import java.io.*;
 import java.nio.file.Files;
@@ -7,11 +7,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class BinarioObjectStream_v1 {
+
     private static final Path RUTA = Path.of("personas_objetos.dat");
 
     public static void main(String[] args) {
+
         escribirPersonas();
         leerPersonas();
+
     }
 
     private static void leerPersonas() {
@@ -46,10 +49,11 @@ public class BinarioObjectStream_v1 {
                 try (OutputStream os = Files.newOutputStream(RUTA);
                      ObjectOutputStream oos = new ObjectOutputStream(os)) {
                     int contador = 1;
+
                     // RECORREMOS EL ARRAYLIST PARA ESCRIBIR PERSONA A PERSONA
                     for (BinariosPersona p : personas) {
                         oos.writeObject(p);
-                        System.out.printf("GRABO LOS DATOS DE LA PERSONA %d %n", contador++, p); //++contador preincremento del contador
+                        System.out.printf("GRABO LOS DATOS DE LA PERSONA %d %n", contador++); //++contador preincremento del contador
                         // equivale a contador = contador + 1 tambien se puede poner en la siguiente linea contador++;
                     }
                 } catch (IOException e) {
