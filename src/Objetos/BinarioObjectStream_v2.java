@@ -23,11 +23,12 @@ public class BinarioObjectStream_v2 {
 
     private static void anadirRegistro(BinariosPersona persona) {
         boolean existe = Files.exists(RUTA);
-
         try (OutputStream os = Files.newOutputStream(
                 RUTA,
                 StandardOpenOption.APPEND);
-                ObjectOutputStream oos = new ObjectOutputStream(os)) {
+                ObjectOutputStream oos = existe
+                        ? new ObjetcOutputStreamSinCabecera(os)
+                        : new ObjectOutputStream(os)) {
             oos.writeObject(persona);
             System.out.println(" + añadida persona: " + persona);
         } catch (IOException ioe){
@@ -80,4 +81,17 @@ public class BinarioObjectStream_v2 {
             ;
         }
     }
-}
+
+    private static class ObjetcOutputStreamSinCabecera extends ObjectOutputStream {
+
+        public ObjetcOutputStreamSinCabecera(OutputStream out) throws IOException {
+            super(out);
+        }
+        @Override
+        protected void writeStreamHeader() throws IOException {
+            //NO HACEMOS NADA PORQUE NO QUEREMOS CABECERA
+        }
+    }
+    }
+
+
