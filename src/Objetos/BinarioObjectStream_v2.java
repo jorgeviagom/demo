@@ -6,7 +6,7 @@ import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 
-public class BinarioObjectStream_v1 {
+public class BinarioObjectStream_v2 {
 
     private static final Path RUTA = Path.of("personas_objetos.dat");
 
