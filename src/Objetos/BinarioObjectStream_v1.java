@@ -33,7 +33,7 @@ public class BinarioObjectStream_v1 {
                 }
             }
         } catch (IOException e) {
-            System.out.println("Error al leer objetos. " + e.getMessage());;
+            System.out.println("Error al leer objetos. " + e.getMessage());
         }
     }
             private static void escribirPersonas() {
@@ -58,7 +58,6 @@ public class BinarioObjectStream_v1 {
                     }
                 } catch (IOException e) {
                     System.err.println("Error escribiendo objetos: " + e.getMessage());
-                    ;
                 }
     }
 }

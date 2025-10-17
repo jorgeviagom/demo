@@ -1,7 +1,7 @@
 import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Path;
-
+//Strings y tipos primitivos
 public class BinariosData {
     public static void main(String[] args) {
         //Si no pongo barra empieza desde la raiz del proyecto "demo"

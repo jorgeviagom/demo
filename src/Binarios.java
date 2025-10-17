@@ -27,7 +27,6 @@ public class Binarios {
         } catch (IOException ioe) {
             System.out.println("Error de lectura " + ioe.getMessage());
             ioe.printStackTrace();
-        } finally {
         }
     }
 }

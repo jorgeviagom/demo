@@ -3,7 +3,7 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
-
+//Byte a byte
 public class BinariosFiles {
     public static void main(String[] args) {
         Path ruta = Path.of("fichBytesFile.dat");

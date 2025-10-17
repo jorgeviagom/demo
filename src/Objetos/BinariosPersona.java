@@ -9,8 +9,8 @@ public class BinariosPersona implements Serializable {
     private static final long serialVersionUID = 1L;
 
     //ATRIBUTOS
-    private String nombre;
-    private int edad;
+    private final String nombre;
+    private final int edad;
 
     //CONSTRUCTOR
     public BinariosPersona(String nombre, int edad) {

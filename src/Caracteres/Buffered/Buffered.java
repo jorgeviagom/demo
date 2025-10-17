@@ -1,10 +1,10 @@
 package Caracteres.Buffered;
-
+//uso de buffered I/O en Java para lectura y escritura archivos de texto
 import java.io.*;
 
 public class Buffered {
 
-    private static final String rutaFichero = "ficheroBuffered.txt";
+    private static final String rutaFichero = "src/Caracteres/Buffered/ficheroBuffered.txt";
 
     public static void main(String[] args) {
 
