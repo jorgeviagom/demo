@@ -8,6 +8,8 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.StandardOpenOption;
 
+//Escribir y leer un fichero de texto (No lo guarda en memoria)
+
 public class PathBufferedAppend {
     //Cambiamos de String a Path
     private static final Path rutaFichero = Path.of("src/Caracteres/Path_y_files","ficheroPathBufferedAppend.txt");
