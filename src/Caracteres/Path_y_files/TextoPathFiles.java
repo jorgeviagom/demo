@@ -35,6 +35,7 @@ public class TextoPathFiles {
     private static void leerPathyFiles() {
 
         try {
+            //Ficheros no muy grandes
             List<String> lineas = Files.readAllLines(rutaFichero);
 
             for (String elemento : lineas) {
