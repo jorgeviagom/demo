@@ -10,9 +10,9 @@ import java.nio.file.StandardOpenOption;
 
 //Escribir y leer un fichero de texto (No lo guarda en memoria)
 
-public class PathBufferedAppend {
+public class TextoPathBufferedAppend {
     //Cambiamos de String a Path
-    private static final Path rutaFichero = Path.of("src/Caracteres/Path_y_files","ficheroPathBufferedAppend.txt");
+    private static final Path rutaFichero = Path.of("src/Caracteres/Path_y_files", "ficheroPathBufferedAppend.txt");
 
     public static void main(String[] args) {
 
@@ -25,24 +25,25 @@ public class PathBufferedAppend {
         try (BufferedWriter bfw = Files.newBufferedWriter(rutaFichero,
                 StandardOpenOption.CREATE,
                 StandardOpenOption.APPEND)
-        ){
+        ) {
             for (int i = 1; i <= 10; i++) {
                 bfw.write("Fila numero: " + i + "\n");
                 //bfw.nextline;
             }
-            System.out.println("Fichero creado en: " + rutaFichero.toAbsolutePath() );
-        } catch(IOException e) {
+            System.out.println("Fichero creado en: " + rutaFichero.toAbsolutePath());
+        } catch (IOException e) {
             System.err.println("IOE generada en escribirPathBuffered: " + e.getMessage());
         }
     }
+
     private static void leerPathBuffered() {
 
-        try (BufferedReader bfr = Files.newBufferedReader(rutaFichero)){
+        try (BufferedReader bfr = Files.newBufferedReader(rutaFichero)) {
             String linea;
-            while((linea = bfr.readLine()) != null) {
+            while ((linea = bfr.readLine()) != null) {
                 System.out.println(linea);
             }
-        } catch(Exception e){
+        } catch (Exception e) {
             System.err.println("IOE generada en escribirPathBuffered: " + e.getMessage());
         }
     }

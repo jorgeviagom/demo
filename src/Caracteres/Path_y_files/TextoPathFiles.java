@@ -1,8 +1,6 @@
 package Caracteres.Path_y_files;
 //uso de buffered I/O en Java para lectura y escritura archivos de texto
 
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -11,7 +9,7 @@ import java.util.List;
 
 //Escribir y leer un fichero de texto (Lo guarda en memoria)
 
-public class PathFiles {
+public class TextoPathFiles {
     //Cambiamos de String a Path
     private static final Path rutaFichero = Path.of("src/Caracteres/Path_y_files", "ficheroPathyFiles.txt");
 
