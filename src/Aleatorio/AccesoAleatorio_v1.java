@@ -29,6 +29,7 @@ public class AccesoAleatorio_v1 {
                 "rw"            //Modo de apertura: lectura y escritura si utilizamos "rw"
         )) {
             //Si quiero sobrescribir el fichero, coloco el puntero al inicio
+            raf.seek(0);
 
         } catch (IOException e) {
             throw new RuntimeException(e);
